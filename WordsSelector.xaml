@@ -1,0 +1,14 @@
+﻿<Window x:Class="Hangman.WordsSelector"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hangman"
+        mc:Ignorable="d"
+        Title="WordsSelector" Height="300" Width="300" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label Content="Select topic" FontSize="30" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 30 0 0"/>
+        <ComboBox Name="Topics" VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" Width="200" FontSize="20"/>
+        <Button Name="StartBtn" Content="Start" Click="StartGame" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="40" Width="100" Margin="0 0 0 50"/>
+    </Grid>
+</Window>

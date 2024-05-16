@@ -1,0 +1,41 @@
+﻿<Window x:Class="Hangman.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hangman"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Name="Grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="245"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="147"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button Name="StartBtn" Content="New Game" Click="StartBtnClick" VerticalAlignment="Top" HorizontalAlignment="Left" Height="40" Width="100" Margin="30 100 0 0" Grid.Row="1"/>
+        <ListBox Name="CharList" FontSize="15" HorizontalAlignment="Left" Margin="30,20,0,0" Width="100"/>
+        <Button Name="GuessBtn" Content="Guess" Click="GuessBtnClick" VerticalAlignment="Top" HorizontalAlignment="Left" Height="40" Width="100" Margin="30 30 0 0" Grid.Row="1"/>
+        <Canvas Name="Hangman" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0 10 0 0" Height="0" Width="0">
+            <Line Name="Ground" X1="-3" Y1="0" X2="135" Y2="0" HorizontalAlignment="Left" VerticalAlignment="Top" Stroke="Black" StrokeThickness="7" Canvas.Left="215" Canvas.Top="221"/>
+            <Line Name="Stand" X1="0" Y1="0"  X2="0" Y2="199" Canvas.Left="215" Canvas.Top="25" Stroke="Black" StrokeThickness="6"/>
+            <Line Name="Top" X1="-5" Y1="0"  X2="80" Y2="0" Canvas.Left="219" Canvas.Top="28"  Stroke="Black" StrokeThickness="6"/>
+            <Line Name="Rope" X1="0" Y1="0" X2="0" Y2="30" Stroke="Gray" StrokeThickness="3" Canvas.Left="280" Canvas.Top="31"/>
+            <Ellipse Name="Head" Height="38" Canvas.Left="261" Stroke="Black" StrokeThickness="2" Canvas.Top="59" Width="38"/>
+            <Line Name="Body" X1="0" Y1="0"  X2="0" Y2="60" Canvas.Left="280" Canvas.Top="95" Stroke="Black" StrokeThickness="2"/>
+            <Line Name="RightHand" X1="0" Y1="0"  X2="20" Y2="20"  Canvas.Left="280" Canvas.Top="100" Stroke="Black" StrokeThickness="2"/>
+            <Line Name="LeftHand" X1="0" Y1="0"  X2="-20" Y2="20"  Canvas.Left="280" Canvas.Top="100" Stroke="Black" StrokeThickness="2"/>
+            <Line Name="RightLeg" X1="0" Y1="0" X2="10" Y2="40" Canvas.Left="280" Canvas.Top="155" Stroke="Black" StrokeThickness="2"/>
+            <Line Name="LeftLeg" X1="0" Y1="0" X2="-10" Y2="40" Canvas.Left="280" Canvas.Top="155" Stroke="Black" StrokeThickness="2"/>
+        </Canvas>
+        <Label FontSize="17" Content="" Name="ShowWrongGuesses" Margin="320,180,0,0" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
+        <Label FontSize="15" Content="Lives left:" Margin="254.8,182,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Height="30" Width="75"/>
+        <TextBlock Grid.Column="1" FontSize="15" HorizontalAlignment="Left" Margin="250,10,0,0" TextWrapping="Wrap" Text="Wrong letters:" VerticalAlignment="Top" Height="25" Width="145"/>
+        <Label Content="Guess the word:" FontSize="15" Grid.Column="1" HorizontalAlignment="Left" Margin="10,30,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Name="TheWord" FontSize="30" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="115,10,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
